@@ -5,7 +5,6 @@ const Films = ({ films }) => {
   const [movies, setMovies] = useState([]);
 
   // find all the movies of the character
-
   useEffect(() => {
     async function fetchAll() {
       setMovies(
