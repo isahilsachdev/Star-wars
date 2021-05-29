@@ -17,11 +17,15 @@ const Vehicles = ({ vehicles }) => {
   }, [vehicles]);
 
   return (
-    <div>
+    <div className='background-image'>
       {vehiclesData.length ? <h1>Vehicles</h1> : null}
       <div className='films-container'>
         {vehiclesData?.map((vehicle, i) => (
-          <div key={i} className='film-box'>
+          <div
+            key={i}
+            style={{ backgroundImage: 'url(/Images/vehicles.jpeg)' }}
+            className='film-box background-image '
+          >
             <div className='head'>
               <h2>{vehicle.name}</h2>
             </div>

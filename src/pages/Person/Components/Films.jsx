@@ -17,11 +17,15 @@ const Films = ({ films }) => {
   }, [films]);
 
   return (
-    <div>
+    <div className='background-image'>
       {movies.length ? <h1>Movies</h1> : null}
       <div className='films-container'>
         {movies?.map((film, i) => (
-          <div key={i} className='film-box'>
+          <div
+            key={i}
+            style={{ backgroundImage: 'url(/Images/movie.jpg)' }}
+            className='film-box background-image '
+          >
             <div className='head'>
               <h2>{film.title}</h2>
             </div>

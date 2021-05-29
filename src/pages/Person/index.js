@@ -28,7 +28,7 @@ function Person() {
 
   // if desired character id is more than the total id we will redirect user to not found page
   if (id >= 89) {
-    history.push('/err');
+    history.push('/no-character');
   }
 
   // else find specific character
@@ -40,7 +40,7 @@ function Person() {
 
   return (
     <div
-      className='person'
+      className='person background-image'
       style={{ backgroundImage: `url(/Images/${images[randomImage]})` }}
     >
       <h1 className='person-name'>{user.name}</h1>

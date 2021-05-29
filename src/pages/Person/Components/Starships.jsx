@@ -17,11 +17,15 @@ const Starships = ({ starships }) => {
   }, [starships]);
 
   return (
-    <div>
+    <div className='background-image'>
       {starshipsData.length ? <h1>Starships</h1> : null}
       <div className='films-container'>
         {starshipsData?.map((startship, i) => (
-          <div key={i} className='film-box'>
+          <div
+            key={i}
+            style={{ backgroundImage: 'url(/Images/ship.jpg)' }}
+            className='film-box background-image'
+          >
             <div className='head'>
               <h2>{startship.name}</h2>
             </div>

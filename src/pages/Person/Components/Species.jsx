@@ -16,7 +16,10 @@ const Species = ({ species }) => {
     <div>
       {species?.length >= 1 ? <h1>Species</h1> : null}
       {species?.length >= 1 ? (
-        <div className='film-box'>
+        <div
+          style={{ backgroundImage: 'url(/Images/species.jpg)' }}
+          className='film-box background-image '
+        >
           <div className='head'>
             <h2>{speciesData.name}</h2>
           </div>

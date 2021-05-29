@@ -85,8 +85,11 @@ function HomePage() {
                 <GiCancel />
               </div>
             )}
-
-            <div className='search-icon'>
+            {/* if user click search , it will fetch the details og the first matched user */}
+            <div
+              className='search-icon'
+              onClick={() => HandlePerson(matchResult[0].url)}
+            >
               <GoSearch />
             </div>
           </div>

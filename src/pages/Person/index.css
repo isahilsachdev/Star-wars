@@ -1,12 +1,12 @@
 .person {
   margin-top: -20px;
   min-height: 100vh;
-  /* background-image: url(./Components/Images/s3.jpg); */
+}
+.background-image {
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: contain;
   background-size: 100% 100%;
 }
-
 .person h1 {
   color: #ecd014;
   margin-left: 30px;
@@ -36,7 +36,7 @@
   margin: 10px 30px;
   border-radius: 10px;
   color: white;
-  opacity: 0.4;
+  opacity: 0.7;
   background-color: rgb(22, 21, 21);
 }
 .film-box:hover {
