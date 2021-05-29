@@ -3,19 +3,20 @@ import axios from 'axios';
 import '../index.css';
 const Species = ({ species }) => {
   const [speciesData, setSpeciesData] = useState([]);
+  const [flag, setFlag] = useState(false);
 
   // find info for species
   useEffect(() => {
     species &&
       axios.get(species[0]).then((res) => {
         setSpeciesData(res.data);
+        setFlag(true);
       });
   }, [species]);
-
   return (
     <div>
-      {species?.length >= 1 ? <h1>Species</h1> : null}
-      {species?.length >= 1 ? (
+      {flag ? <h1>Species</h1> : null}
+      {flag ? (
         <div
           style={{ backgroundImage: 'url(/Images/species.jpg)' }}
           className='film-box background-image '
