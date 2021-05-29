@@ -98,7 +98,7 @@ function HomePage() {
             {matchResult.map((user, i) => (
               <div
                 className={`searched-user ${
-                  i == cursor ? 'activeHighlight' : ''
+                  i === cursor ? 'activeHighlight' : ''
                 } `}
                 key={i}
                 onClick={() => HandlePerson(user.url)}

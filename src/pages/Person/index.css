@@ -22,6 +22,13 @@
   font-size: 50px;
   color: #fff;
 }
+.loading {
+  position: absolute;
+  font-size: 45px;
+  top: 5%;
+  left: 5%;
+  color: white !important;
+}
 /* films */
 .films-container {
   display: flex;
@@ -40,13 +47,13 @@
   background-color: rgb(22, 21, 21);
 }
 .film-box:hover {
-  transition: transform 500ms;
-  transition-delay: 200ms;
-  transform: scale(0.98);
+  transition: transform 200ms;
+  /* transition-delay: 200ms; */
+  transform: scale(1.02);
 }
 .film-box > .head {
   color: #fff;
-  height: 25%;
+  height: 45px;
 }
 .film-box > .content {
   margin-top: 10px;

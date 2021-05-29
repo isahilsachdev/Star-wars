@@ -14,16 +14,7 @@ function Person() {
   const history = useHistory();
 
   // some random star wars images to keep changinf background everytime
-  const images = [
-    's1.jpg',
-    's4.jpg',
-    's3.jpg',
-    's5.jpg',
-    's6.jpg',
-    's7.jpg',
-    's8.jpg',
-    's9.jpg',
-  ];
+  const images = ['s1.jpg', 's3.jpg', 's5.jpg', 's6.jpg', 's7.jpg', 's8.jpg'];
   const randomImage = Math.floor(Math.random() * images.length);
 
   // if desired character id is more than the total id we will redirect user to not found page
@@ -33,11 +24,24 @@ function Person() {
 
   // else find specific character
   useEffect(() => {
-    axios.get(`${root_url}/people/${id}`).then((res) => {
-      setUser((user) => res.data);
-    });
+    setTimeout(() => {
+      axios.get(`${root_url}/people/${id}`).then((res) => {
+        setUser((user) => res.data);
+      });
+    }, 1000);
   }, [id]);
 
+  // loading until user is empty
+  if (user === '') {
+    return (
+      <div
+        className='person background-image'
+        style={{ backgroundImage: `url(/Images/s9.jpg)` }}
+      >
+        <div className='loading'>Launcing your character...</div>
+      </div>
+    );
+  }
   return (
     <div
       className='person background-image'
