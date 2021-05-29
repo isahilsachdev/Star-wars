@@ -1,0 +1,68 @@
+.person {
+  margin-top: -20px;
+  min-height: 100vh;
+  /* background-image: url(./Components/Images/s3.jpg); */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+.person h1 {
+  color: #ecd014;
+  margin-left: 30px;
+}
+.person-name {
+  text-align: center;
+  font-size: 30px;
+}
+.person-name-wrong {
+  position: absolute;
+  top: 3%;
+  left: 35%;
+  font-size: 50px;
+  color: #fff;
+}
+/* films */
+.films-container {
+  display: flex;
+  overflow: overlay;
+}
+.film-box {
+  text-align: center;
+  padding-top: 10px;
+  height: 180px;
+  width: 180px;
+  min-width: 140px;
+  margin: 10px 30px;
+  border-radius: 10px;
+  color: white;
+  opacity: 0.4;
+  background-color: rgb(22, 21, 21);
+}
+.film-box:hover {
+  transition: transform 500ms;
+  transition-delay: 200ms;
+  transform: scale(0.98);
+}
+.film-box > .head {
+  color: #fff;
+  height: 25%;
+}
+.film-box > .content {
+  margin-top: 10px;
+}
+.film-box > .content div {
+  align-items: center;
+  height: 40px;
+  justify-content: center;
+  display: flex;
+}
+.film-box > .content div p {
+  width: 50%;
+  text-align: left !important;
+}
+.film-box > .content div span {
+  color: yellow;
+  width: 30%;
+  margin: 0px 8px;
+}
