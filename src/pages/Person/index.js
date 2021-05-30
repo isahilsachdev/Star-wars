@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './index.css';
-import { Redirect, useHistory, useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import axios from 'axios';
 import Films from './Components/Films';
 import Species from './Components/Species';
@@ -13,7 +13,6 @@ function Person() {
   const { id } = useParams();
   const [user, setUser] = useState('');
   const history = useHistory();
-
   // some random star wars images to keep changinf background everytime
   const images = [
     's1.jpg',
@@ -26,7 +25,11 @@ function Person() {
   ];
   const randomImage = Math.floor(Math.random() * images.length);
 
-  // find specific character
+  // if desired character id is more than the total id we will redirect user to not found page
+  if (id >= 89) {
+    history.push('/error');
+  }
+  // else find specific character
   useEffect(() => {
     setTimeout(() => {
       axios.get(`${root_url}/people/${id}`).then((res) => {
@@ -34,11 +37,6 @@ function Person() {
       });
     }, 1000);
   }, [id]);
-
-  // if desired character id is more than the total id we will redirect user to not found page
-  if (id >= 89) {
-    return <Redirect to='/no-superhero-available' />;
-  }
 
   // loading until user is empty
   if (user === '') {
