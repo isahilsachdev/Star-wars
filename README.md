@@ -1,4 +1,4 @@
-<p align="center">S T A R  W A R S</p>
+<h1 align="center">S T A R  W A R S</h1>
 
 ## Demo link ( this project is deployed on netlify )
 
