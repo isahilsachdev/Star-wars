@@ -18,7 +18,7 @@ const Starships = ({ starships }) => {
 
   return (
     <div className='background-image'>
-      {starshipsData.length ? <h1>Starships</h1> : null}
+      {starshipsData.length ? <h1 className='text-shadow'>Starships</h1> : null}
       <div className='box-container-row'>
         {starshipsData?.map((startship, i) => (
           <div

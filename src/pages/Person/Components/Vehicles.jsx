@@ -18,7 +18,7 @@ const Vehicles = ({ vehicles }) => {
 
   return (
     <div className='background-image'>
-      {vehiclesData.length ? <h1>Vehicles</h1> : null}
+      {vehiclesData.length ? <h1 className='text-shadow'>Vehicles</h1> : null}
       <div className='box-container-row'>
         {vehiclesData?.map((vehicle, i) => (
           <div

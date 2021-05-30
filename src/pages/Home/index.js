@@ -13,16 +13,22 @@ function HomePage() {
   const [cursor, setCursor] = useState(-1);
   const searchContainerRef = useRef(null);
   const searchResultRef = useRef(null);
+  const [loading, setLoading] = useState(false);
 
   // to search as user writes
   useEffect(() => {
+    setLoading((prev) => true);
     if (name !== '') {
-      axios
-        .get(`https://swapi.py4e.com/api/people?search=${name}`)
-        .then((res) => {
-          setMatchResult(res.data.results);
-        });
+      setTimeout(() => {
+        axios
+          .get(`https://swapi.py4e.com/api/people?search=${name}`)
+          .then((res) => {
+            setMatchResult(res.data.results);
+            setLoading((prev) => false);
+          });
+      }, 500);
     } else {
+      setLoading((prev) => false);
       setMatchResult([]);
     }
   }, [name]);
@@ -86,12 +92,16 @@ function HomePage() {
               </div>
             )}
             {/* if user click search , it will fetch the details og the first matched user */}
-            <div
-              className='search-icon'
-              onClick={() => HandlePerson(matchResult[0].url)}
-            >
-              <GoSearch />
-            </div>
+            {loading ? (
+              <div className='loader'></div>
+            ) : (
+              <div
+                className='search-icon'
+                onClick={() => HandlePerson(matchResult[0].url)}
+              >
+                <GoSearch />
+              </div>
+            )}
           </div>
           <hr color='black' />
           <div className='autocomplete-box' ref={searchResultRef}>

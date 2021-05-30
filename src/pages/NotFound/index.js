@@ -1,17 +1,16 @@
 import React from 'react';
 import { useHistory } from 'react-router';
 import './index.css';
-// import
+import { TiHome } from 'react-icons/ti';
 function NotFound() {
   const history = useHistory();
-  const GoHome = () => {
-    history.push('/');
-  };
+
+  // to redirect user back to home page
   return (
     <div className='not-found'>
-      <button onClick={GoHome} className='back-button'>
-        Return to home page
-      </button>
+      <div className='logo-home'>
+        <TiHome onClick={() => history.push('/')} />
+      </div>
     </div>
   );
 }

@@ -6,6 +6,7 @@ import Films from './Components/Films';
 import Species from './Components/Species';
 import Vehicles from './Components/Vehicles';
 import Starships from './Components/Starships';
+import { TiHome } from 'react-icons/ti';
 
 function Person() {
   const root_url = 'https://swapi.py4e.com/api';
@@ -43,7 +44,7 @@ function Person() {
   if (user === '') {
     return (
       <div
-        className='loading-image background-image'
+        className='person background-image'
         style={{ backgroundImage: `url(/Images/s9.jpg)` }}
       >
         <div className='loading'>Launcing your character...</div>
@@ -52,10 +53,13 @@ function Person() {
   }
   return (
     <div
-      className='person background-image'
+      className='person background-image stick-top'
       style={{ backgroundImage: `url(/Images/${images[randomImage]})` }}
     >
-      <h1 className='person-name'>{user.name}</h1>
+      <div className='logo-home'>
+        <TiHome onClick={() => history.push('/')} />
+      </div>
+      <h1 className='person-name text-shadow'>{user.name}</h1>
 
       <Films {...user} />
       <Species {...user} />

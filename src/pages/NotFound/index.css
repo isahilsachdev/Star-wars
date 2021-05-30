@@ -16,3 +16,9 @@
   top: 3%;
   left: 44%;
 }
+.logo-home {
+  position: absolute;
+  color: yellow;
+  font-size: 28px;
+  padding: 24px 28px;
+}

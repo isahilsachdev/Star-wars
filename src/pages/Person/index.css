@@ -1,10 +1,12 @@
 .person {
-  margin-top: -20px;
   min-height: 100vh;
+  width: 100%;
+}
+.stick-top {
+  margin-top: -30px;
 }
 .background-image {
   background-repeat: no-repeat;
-  background-attachment: contain;
   background-size: 100% 100%;
 }
 
@@ -14,7 +16,13 @@
 }
 .person-name {
   text-align: center;
-  font-size: 30px;
+  font-size: 40px;
+  color: #cccccc;
+}
+.text-shadow {
+  text-shadow: 0 1px 0 #999999, 0 2px 0 #888888, 0 3px 0 #777777,
+    0 4px 0 #666666, 0 5px 0 #555555, 0 6px 0 #444444, 0 7px 0 #333333,
+    0 8px 7px rgba(0, 0, 0, 0.4), 0 9px 10px rgba(0, 0, 0, 0.2);
 }
 .person-name-wrong {
   position: absolute;
@@ -23,15 +31,18 @@
   font-size: 50px;
   color: #fff;
 }
-.loading-image {
-  height: 100vh;
-}
 .loading {
   position: absolute;
   font-size: 45px;
   top: 5%;
   left: 5%;
   color: white !important;
+}
+.logo-home {
+  position: absolute;
+  color: yellow;
+  font-size: 28px;
+  padding: 28px;
 }
 /* films */
 .box-container-row {
@@ -52,7 +63,6 @@
 }
 .box-container:hover {
   transition: transform 200ms;
-  /* transition-delay: 200ms; */
   transform: scale(1.02);
 }
 .box-container > .box-head {
@@ -76,4 +86,10 @@
   color: yellow;
   width: 30%;
   margin: 0px 8px;
+}
+
+@media only screen and (max-width: 600px) {
+  .person {
+    background-image: url(/Images/phone.jpg) !important;
+  }
 }

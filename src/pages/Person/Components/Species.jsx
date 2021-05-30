@@ -15,7 +15,7 @@ const Species = ({ species }) => {
   }, [species]);
   return (
     <div>
-      {flag ? <h1>Species</h1> : null}
+      {flag ? <h1 className='text-shadow'>Species</h1> : null}
       {flag ? (
         <div
           style={{ backgroundImage: 'url(/Images/species.jpg)' }}

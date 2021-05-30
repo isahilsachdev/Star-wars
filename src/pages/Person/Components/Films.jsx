@@ -18,7 +18,7 @@ const Films = ({ films }) => {
 
   return (
     <div className='background-image'>
-      {movies.length ? <h1>Movies</h1> : null}
+      {movies.length ? <h1 className='text-shadow'>Movies</h1> : null}
       <div className='box-container-row'>
         {movies?.map((film, i) => (
           <div
