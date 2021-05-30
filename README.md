@@ -1,7 +1,6 @@
-<p align="center">
-  <img src="https://s3-ap-southeast-1.amazonaws.com/asia.urbanpiper.com/static/frontend/images/logo.svg" alt="UrbanPiper" width="226">
-</p>
+<h1 align="center">S T A R  W A R S</h1>
 
+<<<<<<< HEAD
 <p align="center">S T A R  W A R S</p>
 
 ## Why an assignment?
@@ -52,11 +51,32 @@ search for characters.
 We have included designs for the component in the repository. Stick close to the
 given designs, but if you feel like some aspect can be improved please feel free
 to do so. We would love to discuss that in the discussions that follow.
+=======
+## Demo link ( this project is deployed on netlify )
 
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/1500309/87780788-0a5b1600-c84d-11ea-8209-6873be1f8b26.png" alt="Readme Image">
-</p>
+🔗https://star-wars07.netlify.app/
 
+## Home page
+
+![Screenshot (717)](https://user-images.githubusercontent.com/73214085/120091110-91437500-c125-11eb-9b54-c0a8cc860c8e.png)
+
+## Search box 
+
+![Screenshot (718)](https://user-images.githubusercontent.com/73214085/120091106-8e488480-c125-11eb-8087-d925d2d95104.png)
+
+## Character page
+
+![Screenshot (719)](https://user-images.githubusercontent.com/73214085/120091113-930d3880-c125-11eb-8b53-89bdf0156303.png)
+
+### Installing and running 
+
+1. git clone this repository in your devices.
+2. npm install all dependencies. 
+3. npm start to run this project in localhost.
+>>>>>>> eff37ef7490c19ea1bc8236d1a53582a03d7f0df
+
+
+<<<<<<< HEAD
 ## Installing and Running
 
 The repository contains a minimal scaffolding created with
@@ -113,3 +133,6 @@ repository from which you forked your repository. Drop us a mail
 :zap: May the Force be with you :zap:
 
 # Star-wars
+=======
+Thank you.
+>>>>>>> eff37ef7490c19ea1bc8236d1a53582a03d7f0df
