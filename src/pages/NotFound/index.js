@@ -6,6 +6,7 @@ function NotFound() {
   const history = useHistory();
 
   // to redirect user back to home page
+
   return (
     <div className='not-found'>
       <div className='logo-home'>
