@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './index.css';
-import { useHistory, useParams } from 'react-router-dom';
+import { Redirect, useHistory, useParams } from 'react-router-dom';
 import axios from 'axios';
 import Films from './Components/Films';
 import Species from './Components/Species';
@@ -26,7 +26,7 @@ function Person() {
   ];
   const randomImage = Math.floor(Math.random() * images.length);
 
-  // else find specific character
+  // find specific character
   useEffect(() => {
     setTimeout(() => {
       axios.get(`${root_url}/people/${id}`).then((res) => {
@@ -34,6 +34,11 @@ function Person() {
       });
     }, 1000);
   }, [id]);
+
+  // if desired character id is more than the total id we will redirect user to not found page
+  if (id >= 89) {
+    return <Redirect to='/no-superhero-available' />;
+  }
 
   // loading until user is empty
   if (user === '') {
