@@ -1,5 +1,7 @@
 <p align="center">S T A R  W A R S</p>
+
 ## Demo link ( this project is deployed on netlify )
+
 🔗https://star-wars07.netlify.app/
 
 ## Home page
