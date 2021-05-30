@@ -26,11 +26,6 @@ function Person() {
   ];
   const randomImage = Math.floor(Math.random() * images.length);
 
-  // if desired character id is more than the total id we will redirect user to not found page
-  if (id >= 89) {
-    history.push('/no-character');
-  }
-
   // else find specific character
   useEffect(() => {
     setTimeout(() => {
