@@ -19,17 +19,17 @@ const Starships = ({ starships }) => {
   return (
     <div className='background-image'>
       {starshipsData.length ? <h1>Starships</h1> : null}
-      <div className='films-container'>
+      <div className='box-container-row'>
         {starshipsData?.map((startship, i) => (
           <div
             key={i}
             style={{ backgroundImage: 'url(/Images/ship.jpg)' }}
-            className='film-box background-image'
+            className='box-container background-image'
           >
-            <div className='head'>
+            <div className='box-head'>
               <h2>{startship.name}</h2>
             </div>
-            <div className='content'>
+            <div className='box-content'>
               <div>
                 <span>Model :</span>
                 <p>{startship.model}</p>

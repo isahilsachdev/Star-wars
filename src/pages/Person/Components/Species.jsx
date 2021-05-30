@@ -19,12 +19,12 @@ const Species = ({ species }) => {
       {flag ? (
         <div
           style={{ backgroundImage: 'url(/Images/species.jpg)' }}
-          className='film-box background-image '
+          className='box-container background-image '
         >
-          <div className='head'>
+          <div className='box-head'>
             <h2>{speciesData.name}</h2>
           </div>
-          <div className='content'>
+          <div className='box-content'>
             <div>
               <span>Class : </span>
               <p> {speciesData.classification}</p>

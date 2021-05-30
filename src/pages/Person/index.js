@@ -35,7 +35,7 @@ function Person() {
   if (user === '') {
     return (
       <div
-        className='person background-image'
+        className='loading-image background-image'
         style={{ backgroundImage: `url(/Images/s9.jpg)` }}
       >
         <div className='loading'>Launcing your character...</div>
