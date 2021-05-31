@@ -14,15 +14,7 @@ function Person() {
   const [user, setUser] = useState('');
   const history = useHistory();
   // some random star wars images to keep changinf background everytime
-  const images = [
-    's1.jpg',
-    's3.jpg',
-    's4.jpg',
-    's5.jpg',
-    's6.jpg',
-    's7.jpg',
-    's8.jpg',
-  ];
+  const images = ['s3.jpg', 's4.jpg', 's5.jpg', 's6.jpg', 's7.jpg', 's8.jpg'];
   const randomImage = Math.floor(Math.random() * images.length);
 
   // if desired character id is more than the total id we will redirect user to not found page
