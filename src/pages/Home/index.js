@@ -4,6 +4,7 @@ import { GoSearch } from 'react-icons/go';
 import axios from 'axios';
 import { GiCancel } from 'react-icons/gi';
 import { useHistory } from 'react-router-dom';
+import _ from 'lodash';
 import './index.css';
 
 function HomePage() {
@@ -14,24 +15,33 @@ function HomePage() {
   const searchContainerRef = useRef(null);
   const searchResultRef = useRef(null);
   const [loading, setLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
+  const inputRef = useRef();
 
-  // to search as user writes
   useEffect(() => {
-    setLoading((prev) => true);
-    if (name !== '') {
-      setTimeout(() => {
-        axios
-          .get(`https://swapi.py4e.com/api/people?search=${name}`)
-          .then((res) => {
-            setMatchResult(res.data.results);
-            setLoading((prev) => false);
-          });
-      }, 500);
-    } else {
-      setLoading((prev) => false);
-      setMatchResult([]);
-    }
-  }, [name]);
+    // initialize debounce function to search once user has stopped typing every half second
+    inputRef.current = _.debounce(onSearchText, 500);
+  }, []);
+
+  const onSearchText = (name) => {
+    setLoading(true);
+    axios
+      .get(`https://swapi.py4e.com/api/people?search=${name}`)
+      .then((res) => {
+        setMatchResult(res.data.results);
+        setLoading((prev) => false);
+      })
+      .catch(() => {
+        setErrorMsg('Something went wrong. Try again later.');
+        setLoading(false);
+      });
+  };
+
+  const handleInputChange = (event) => {
+    const name = event.target.value;
+    setName(name);
+    inputRef.current(name);
+  };
 
   // to redirect to the individual person
   const HandlePerson = (url) => {
@@ -82,7 +92,7 @@ function HomePage() {
           <div className='search-input-box'>
             <input
               placeholder='Search by name'
-              onChange={(e) => setName(e.target.value)}
+              onChange={handleInputChange}
               value={name}
               onKeyDown={(e) => keyboardNav(e)}
             />
@@ -104,6 +114,7 @@ function HomePage() {
             )}
           </div>
           <hr color='black' />
+          {errorMsg && <p>{errorMsg}</p>}
           <div className='autocomplete-box' ref={searchResultRef}>
             {matchResult.map((user, i) => (
               <div

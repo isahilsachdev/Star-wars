@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.21.1",
     "jest-dom": "^4.0.0",
+    "lodash": "^4.17.21",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-icons": "^4.2.0",
@@ -35,6 +36,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "homepage": "."
+  }
 }
